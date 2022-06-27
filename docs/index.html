@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url('https://images.unsplash.com/photo-1473081556163-2a17de81fc97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMGxlYWZ8ZW58MHx8MHx8&w=1000&q=80');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 32px;
+}
+
+.topright {
+  position: absolute;
+  top: 0;
+  right: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: white;
+  width: 80%;
+}
+
+th, td {
+  padding: 8px;
+  color: black;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#joinlist {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#addAlias{
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+input[type=text] {
+  /* text-align: center; */
+  border: none;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+input::placeholder{
+  text-align: center;
+}
+
+
+#textcolor{
+  color: #000;
+}
+
+</style>
+<body>
+
+  <!-- calling the image and applying the css created for the class called bgimg -->
+<div class="bgimg">
+
+  <!-- The top left to show the remaining whitelist -->
+  <div class="topleft">
+    <p>Whitelist Spot Remaining</p>
+    <p id="whitelist"> 0 </p>
+  </div>
+
+  <!-- The top left bar that shows your balance from your celo wallet -->
+  <div class="topright">
+    <p>Wallet Balance</p>
+    <p id="balance">0.00</p>
+  </div>
+
+
+
+  <!-- EVERYTHING IN THE MIDDLE SUCH AS THE TICKING TIME, ABILITY TO JOIN WHITELIST ETC IS IN THIS SECTION COVERED BY THIS DIV -->
+  <div class="middle">
+
+    <h1>ENDING SOON</h1>
+
+    <hr>
+
+    <!-- In every app, the feedback is quite essential and therefore i created a notification panel to give feedback like succesful transaction and show errors etc. -->
+    <span id="notification">⌛ Loading...</span>
+
+    <!-- this gives the remaining amount of time left to join the whitelist, This only allows a limit of 50 and at the point of making this app it should already have 4 users  -->
+    <p id="daysleft" >⌛  Checking For Remaining time to join White List</p>
+
+    <!-- The alias of the blochain user being added to the  smart contract is added with this input  -->
+
+    <input type="text" id="blck_handle" placeholder="enter your alias" style="font-size: 30pt;"><br><br>
+
+    <!-- the joinlist IDENTIFIER is also used by the javascript to call the addToWaitlist Smart contract method  -->
+
+    <button id="joinlist"> Join WhiteList</button><br><br>
+
+    
+    <!-- This table has an identifier called listedppl which is controlled by the javascript file  -->
+    <table id = "listedppl"></table>
+
+  </div>
+    
+  
+  
+</div>
+
+<script type="text/javascript" src="main.js"></script></body>
+</html>
