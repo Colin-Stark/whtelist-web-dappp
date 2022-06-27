@@ -1,3 +1,5 @@
+https://img.shields.io/badge/Solidity-0.8.7-orange
+
 # Install
 
 ```
