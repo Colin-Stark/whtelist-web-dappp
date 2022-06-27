@@ -6,14 +6,20 @@ This is a web dapp for adding people to your whitelist and it is time specific( 
 * View Table of address and their handles in the whitelist from the contract
 * View remaining time available to join whitelist 
 * See total amount of whitelist spot remaining
-* View Balance of Address to confirm usage of the right account
+* View Balance of Address to confirm usage of the right account <br><br>
+
+# HOW DO I LEARN TO BUILD WEB3 PROJECTS LIKE THIS 
+You can learn to build web3 project from learn to earn website(i.e you earn while you learn about new technology) like [Dacade](https://dacade.org/signup?invite=SinzuCrypto) by signing up and taking advantage of their courses
 
 # LIVE DEMO 
 
-[WHITELIST DAPP](https://colin-stark.github.io/whtelist-web-dappp/)
+Please make sure to switch to the alfajores testnet before opening the page. You can scroll down to usage to see how to use this Web Dapp
 
+[Celo Web3 Dapp (Whitelist) ](https://colin-stark.github.io/whtelist-web-dappp/) <br><br>
 
-# Install
+##  PROJECT SETUP <br><br>
+
+# INSTALL
 
 ```
 npm install
@@ -25,19 +31,28 @@ or
 yarn install
 ```
 
-# Start
+# START
 ```
 npm run dev
 ```
 
-# Build
+# BUILD
 
 ```
 npm run build
 ```
 
-# Usage
+# USAGE
 1. Install the [CeloExtensionWallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh?hl=en) from the google chrome store.
 2. Create a wallet.
-3. Go to [https://celo.org/developers/faucet](https://celo.org/developers/faucet) and get tokens for the alfajores testnet.
-4. Switch to the alfajores testnet in the CeloExtensionWallet.
+4. Go to [https://celo.org/developers/faucet](https://celo.org/developers/faucet) and get tokens for the alfajores testnet.
+5. Switch to the alfajores testnet in the CeloExtensionWallet.
+
+# WHAT IS ALFAJORES
+Alfajores is a test network under celo for developers to use when developing projects such as this one. You can visit the [Celo Docs](https://docs.celo.org/) to learn more
+
+# USEFUL LINKS FOR ALFAJORES TESTNET
+1. [Alfajores Celo Explorer](https://alfajores-blockscout.celo-testnet.org/)
+2. [Alfajores Celo Network Status](https://alfajores-blockscout.celo-testnet.org/)
+
+
