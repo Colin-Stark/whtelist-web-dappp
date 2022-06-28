@@ -11,7 +11,7 @@ let kit
 let contract
 let _whitelist = []
 
-
+// connect user wallet to contract
 const connectCeloWallet = async function () {
   if (window.celo) {
     try {
@@ -33,25 +33,30 @@ const connectCeloWallet = async function () {
   }
 }
 
+// get user balance
 const getBalance = async function (){
   const totalBalance = await kit.getTotalBalance(kit.defaultAccount)
   const cUSDBalance = totalBalance.cUSD.shiftedBy(-ERC20_DECIMALS).toFixed(2)
   document.querySelector("#balance").textContent = cUSDBalance
 }
 
+// pop-up notification
 function notification(_texts) {
   document.querySelector("#notification").textContent = _texts
 }
 
+// pop-up notification
 function notificationOff(){
   document.querySelector("#notification").style.display = "none"
 }
 
+// get how many space left before whitelist is filled
 const getRemainingWhitelist = async function(){
   const _userlistlength = await contract.methods.whitelistRemaining().call()
   document.querySelector("#whitelist").textContent = _userlistlength
 }
 
+// get whitelist closing time
 const getClosingTime = async function(){
   //getting the closing time from the contract
   const _timeToClose = await contract.methods.closingTime().call()
@@ -82,7 +87,6 @@ const getClosingTime = async function(){
 }
 
 // call the beta_tester function to know how many people have taken up whitelist space
-
 const getListofPeople = async function (){
   const _peopleSize = await contract.methods.beta_tester().call()
   const _sizeOfPeople = []
@@ -103,6 +107,8 @@ const getListofPeople = async function (){
   renderTableWithList()
 }
 
+
+// update UI with whitelist
 function renderTableWithList(){
   document.getElementById("listedppl").innerHTML=`
 
@@ -120,6 +126,7 @@ function renderTableWithList(){
   })
 }
 
+// helper function
 function tabletemplate(_sizeOfPpl){
   return `
   <td>${_sizeOfPpl.index} </td>
@@ -127,6 +134,7 @@ function tabletemplate(_sizeOfPpl){
   <td>${_sizeOfPpl.handle} </td>
   `
 }
+
 
 window.addEventListener('load', async () => {
   //Run this function before you connect the wallet
@@ -151,6 +159,11 @@ window.addEventListener('load', async () => {
 document.querySelector("#joinlist").addEventListener("click", async (e) => {
 
   const params = document.getElementById("blck_handle").value
+
+  if (!params) {
+    alert("Please fill in the alias input field!");
+    return;
+  }
 
   // checking the log to see that it is actually getting the value of the input field
   console.log(params)
