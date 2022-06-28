@@ -152,8 +152,10 @@ document.querySelector("#joinlist").addEventListener("click", async (e) => {
 
   const params = document.getElementById("blck_handle").value
 
-  // checking the log to see that it is actually getting the value of the input field
-  console.log(params)
+  if(!params.length){
+    notification("Please enter an alias");
+    return;
+  }
 
   try{
     const result = await contract.methods
