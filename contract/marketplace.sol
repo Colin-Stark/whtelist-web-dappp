@@ -15,6 +15,8 @@ contract Celo {
     // Define variable for User who joins
     User[] public users;
 
+    event AddUserEvent(address indexed user);
+
     struct User {
         string handle;
         address walletaddress;
@@ -78,6 +80,7 @@ contract Celo {
         increaseBetaTester();
         decreaseWhitelist();
         users.push(User(_handle, msg.sender));
+        emit AddUserEvent(msg.sender);
     }
 
     // Make the increase of users internal, it shouldnt be a function that can be called outside the contract for security purpose
